@@ -1,139 +1,54 @@
-<DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
-<title>My Website</title>
-<style>
-  .box {
-    background: rgb(26, 128, 51);
-    padding: 20px;
-    margin: 15px;
-    border-radius: 10px; 
-  }
-@media (max-width: 600px) {
-  body {
-    background-color:  #19aa19;
- }
-
-}
-
-h1 {
-  color: dark;
-  text-align: center;
-}
-
-p {
-  font-size: 18px;
-}
-
-table {
-  background: rgb(109, 106, 106);
-}
-
-th {
-  background: #4CAF50
-  color white;
-  padding: 8px;
-}
-
-td {
-  padding: 8px;
-}
-
-form {
-  background: rgb(126, 81, 81);
-  padding: 15px;
-  width: 300px;
-}
-.menu {
-  background: #333;
-  padding: 10px;
-  text-align: center;
-}
-
-.menu a {
-  color: white;
-  text-decoration: none;
-  margin: 10px;
-  font-size: 18px;
-}
-
-.menu a:hover {
-  background: white;
-  color: #333;
-  padding: 5px 10px;
-  border-radius: 5px;
-}
-</style>
-</head>
-<div class="menu">
-  <h1>My Name is KHIRUL ALOM</h1>
-  <a href="#">Home</a>
-  <a href="#">About</a>
-  <a href="#">Skills</a>
-  <a href"#">Projects</a>
-  <a href="#">Contact</a>
-</div>
-<body>
-  <div class="box">
-    <h2>About Me</h2>
-    <p>I am Learning Web Development</p>
-  </div>
-
-  <div class="box">
-    <h2>My Skills</h2>
-    <p>HTML, CSS, JavaScript</p>
-  </div>
-<h1>My personal website</h>
-<p>Hello! My name is KHIRUL ALOM</p>
-<a href="https://www.facebook.com/photo/?fbid=1646112052745666&set=a.816481535708726">My Facebook</a>
-<br><br>
-<img src="photo.jpg.jpeg" width="200">
-<script>
-  alert("welcome to my website");
-</script>
-<button onclick="sayhello()">Click Me</button>
-<script>
-  function sayhello() {
-    alert("Hello! You clicked the button.");
-  }
-</script>
-
-<script>
-  function checkForm() {
-    var name = document.getElementById("name") .value;
-    var email = document.getElementById("email") .value;
-
-    if(name == ""  || email == "") {
-      alert("please fill all fields");
-      return false;
+  <title>My Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f2f6ff;
+      text-align: center;
     }
 
-    alert("form submitted successfully! ");
-    return true;
-}
-</script>
-</body>
-<h2>My Skills</h2>
-<u1>
-  <li>Web Design</li>
-  <li>HTML</li>
-  <li>CSS</li>
-</u1>
-<h2>Student Info</h2>
-<table border="1">
-<tr>
-<th>Name</th>
-<th>Course</th>
-</tr>
-<td>Your Name</td>
-</tr>
-</table>
-<h2>Contact Me</h2>
-<form>
-<form onsubmit="return checkForm()">
-  Name: <input type="text" id="name"><br><br>
-  Email: <input type="email" id="email"><br><br>
-  <input type="submit" value="submit">
-</form>
+    .container {
+      padding: 80px 20px;
+    }
 
+    h1 {
+      color: #222;
+      font-size: 42px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+
+    button {
+      background: #0066ff;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+
+    button:hover {
+      background: #004bcc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h1>Hi, I'm Khairul</h1>
+    <p>Web Developer | Learner | Creator</p>
+    <button>Contact Me</button>
+  </div>
+
+</body>
 </html>
+
+

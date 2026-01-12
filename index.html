@@ -2,8 +2,7 @@
 <html>
 <head>
   <title>My Portfolio</title>
-  <style>
-* {
+  <style>* {
   box-sizing: border-box;
 }
 
@@ -11,7 +10,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f2f6ff;
-  color: #222;
+  color: #111;
 }
 
 .navbar {
@@ -29,6 +28,7 @@ body {
 .container {
   padding: 80px 20px;
   text-align: center;
+  background: #f2f6ff;
 }
 
 .about {
@@ -36,9 +36,19 @@ body {
   padding: 50px 20px;
 }
 
+.about h2,
+.about p {
+  color: #111;
+}
+
 .skills {
   background: #f2f6ff;
   padding: 50px 20px;
+  text-align: center;
+}
+
+.skills h2 {
+  color: #111;
 }
 
 .skills ul {
@@ -55,11 +65,20 @@ body {
   border-radius: 5px;
 }
 
+button {
+  background: #0066ff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
 @media (max-width: 600px) {
   h1 { font-size: 30px; }
 }
-
-  </style>
+</style>
 </head>
 <body>
   <div class="navbar">
@@ -90,6 +109,7 @@ body {
 
 </body>
 </html>
+
 
 
 

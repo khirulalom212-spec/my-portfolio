@@ -92,6 +92,20 @@ footer {
   text-align: center;
   padding: 15px;
 }
+
+.contact input, .contact textarea {
+  width: 80%;
+  max-width: 400px;
+  padding: 10px;
+  margin: 10px 0;
+}
+
+.contact button {
+  background: #0066ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+}
 </style>
 </head>
 <body>
@@ -107,6 +121,11 @@ footer {
     <h1>Hi, I'm Khairul</h1>
     <p>Web Developer | Learner | Creator</p>
     <button id="ContactBtn">Contact Me</button>
+    <form id="contactForm">
+      <input type="text" id="name" placeholder="Your Name" required><br><br>
+      <textarea id="message" placeholder="Your Message" required></textarea><br><br>
+      <button type="submit">Send</button>
+    </form>
   </div>
     <div class="About">
     <h2>About Me</h2>
@@ -137,6 +156,7 @@ footer {
 
 </body>
 </html>
+
 
 
 

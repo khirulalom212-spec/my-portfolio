@@ -11,6 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (contactForm) {
     contactForm.addEventListener("submit", function (e) {
+  if (name.trim() === "") {
+    alert("please Enter your name");
+    return;
+  }
       e.preventDefault();
       const name = document.getElementById("name").value;
       alert("Thanks " + name + ", your message has been sent!");

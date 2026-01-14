@@ -10,9 +10,24 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   if (contactForm) {
-    contactForm.addEventListener("submit", function (e) {
-  if (name.trim() === "") {
-    alert("please Enter your name");
+    contactForm.addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value;
+  const message = document.getElementById("message").value;
+
+  emailjs.send("service_u6hqtnj", "tamplate_aszlqeq", {
+    name: name,
+    message: message,
+  })
+  .then(function() {
+    alert("Message sent successfully!");
+    contactForm.reset();
+  }, function(error) {
+    alert("Failed to send message");
+  });
+});
+
     return;
   }
       e.preventDefault();

@@ -7,7 +7,7 @@ if (contactForm) {
         const name = document.getElementById("name").value;
         const message = document.getElementById("message").value;
 
-        emailjs.send("service_u6hqtnj", "template_aszlqeg", {
+        emailjs.send("service_u6hqtnj", "template_aszlqeq", {
             name: name,
             message: message
         }).then(function() {

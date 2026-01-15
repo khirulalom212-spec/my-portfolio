@@ -1,38 +1,21 @@
-document.addEventListener("DOMContentLoaded", function () {
+const contactForm = document.getElementById("contactForm");
 
-  const contactBtn = document.getElementById("contactBtn");
-  const contactForm = document.getElementById("contactForm");
-
-  if (contactBtn) {
-    contactBtn.addEventListener("click", function () {
-      alert("Thanks for contacting me!");
-    });
-  }
-
-  if (contactForm) {
+if (contactForm) {
     contactForm.addEventListener("submit", function(e) {
-  e.preventDefault();
+        e.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const message = document.getElementById("message").value;
+        const name = document.getElementById("name").value;
+        const message = document.getElementById("message").value;
 
-  emailjs.send("service_u6hqtnj", "tamplate_aszlqeq", {
-    name: name,
-    message: message,
-  })
-  .then(function() {
-    alert("Message sent successfully!");
-    contactForm.reset();
-  }, function(error) {
-    alert("Failed to send message");
-  });
-});
-
-    return;
-  }
-      e.preventDefault();
-      const name = document.getElementById("name").value;
-      alert("Thanks " + name + ", your message has been sent!");
+        emailjs.send("service_u6hqtnj", "template_aszlqeg", {
+            name: name,
+            message: message
+        }).then(function() {
+            alert("Thanks " + name + ", your message has been sent!");
+            contactForm.reset();
+        }, function(error) {
+            alert("Failed to send message");
+            console.log(error);
+        });
     });
-  
-
+}

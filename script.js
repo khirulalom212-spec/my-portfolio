@@ -22,8 +22,8 @@ document.addEventListener("DOMContentLoaded", function () {
         contactForm.reset();
       })
       .catch(function (error) {
-        console.log(error);
-        alert("Failed to send message");
+        console.log("EMAILJS ERROR:", error);
+        alert("Failed: " + (error.text | |  JSON.stringify(error)));
       });
   });
 });

@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const message = msgEl ? msgEl.value : "";
 
     emailjs
-      .send("service_u6hqtnj", "template_aszlqeg", { name, message })
+      .send("service_u6hqtnj", "template_aszlqeq", { name, message })
       .then(function () {
         alert("Thanks " + name + ", your message has been sent!");
         contactForm.reset();

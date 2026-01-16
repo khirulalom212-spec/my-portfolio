@@ -1,30 +1,24 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const contactForm = document.getElementById("contactForm");
+  console.log("DOM loaded");
 
-  if (!contactForm) {
-    console.log("Form not found: check id='contactForm'");
+  const form = document.getElementById("contactForm");
+  console.log("form:", form);
+
+  if (!form) {
+    alert("Form not found! Check id='contactForm'");
     return;
   }
 
-  contactForm.addEventListener("submit", function (e) {
+  form.addEventListener("submit", function (e) {
     e.preventDefault();
+    alert("Submit event fired ✅");
 
-    const nameEl = document.getElementById("name");
-    const msgEl = document.getElementById("message");
-
-    const name = nameEl ? nameEl.value : "";
-    const message = msgEl ? msgEl.value : "";
+    const name = document.getElementById("name")?.value || "";
+    const message = document.getElementById("message")?.value || "";
 
     emailjs
       .send("service_u6hqtnj", "template_aszlqeq", { name, message })
-      .then(function () {
-        alert("Thanks " + name + ", your message has been sent!");
-        contactForm.reset();
-      })
-      .catch(function (error) {
-        console.log("EMAILJS ERROR:", error);
-        alert("Failed: " + (error.text | |  JSON.stringify(error)));
-      });
+      .then(() => alert("SUCCESS ✅"))
+      .catch((err) => alert("FAILED ❌ " + (err.text || JSON.stringify(err))));
   });
 });
-

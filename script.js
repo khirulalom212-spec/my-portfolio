@@ -1,21 +1,30 @@
-const contactForm = document.getElementById("contactForm");
+document.addEventListener("DOMContentLoaded", function () {
+  const contactForm = document.getElementById("contactForm");
 
-if (contactForm) {
-    contactForm.addEventListener("submit", function(e) {
-        e.preventDefault();
+  if (!contactForm) {
+    console.log("Form not found: check id='contactForm'");
+    return;
+  }
 
-        const name = document.getElementById("name").value;
-        const message = document.getElementById("message").value;
+  contactForm.addEventListener("submit", function (e) {
+    e.preventDefault();
 
-        emailjs.send("service_u6hqtnj", "template_aszlqeq", {
-            name: name,
-            message: message
-        }).then(function() {
-            alert("Thanks " + name + ", your message has been sent!");
-            contactForm.reset();
-        }, function(error) {
-            alert("Failed to send message");
-            console.log(error);
-        });
-    });
-}
+    const nameEl = document.getElementById("name");
+    const msgEl = document.getElementById("message");
+
+    const name = nameEl ? nameEl.value : "";
+    const message = msgEl ? msgEl.value : "";
+
+    emailjs
+      .send("service_u6hqtnj", "template_aszlqeg", { name, message })
+      .then(function () {
+        alert("Thanks " + name + ", your message has been sent!");
+        contactForm.reset();
+      })
+      .catch(function (error) {
+        console.log(error);
+        alert("Failed to send message");
+      });
+  });
+});
+

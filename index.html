@@ -113,6 +113,24 @@ footer {
   justify-content: center;
   flex-wrap: wrap;
 }
+
+.btn-social {
+  text-decoration: none;
+  color: #fff !important;
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.btn-social:hover {
+  transform: translateY(-2px);
+  opacity: .92;
+}
+
 .social-buttons a {
   text-decoration: none;
   color: white;
@@ -130,6 +148,42 @@ footer {
               display: inline-block;
               }
 .btn-messanger{ background: #0084FF; }
+.icon{ font-size: 18px;
+      line-height: 1;
+     }
+
+.floating-chat {
+  position: fixed;
+  right: 16px;
+  bottom: 18px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 9999;
+}
+
+.float-btn{
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white !important;
+  text-decoration: none;
+  font-weight: 800;
+  box-shadow: 0 8px 20px rgba(0,0,0,.22);
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+.float-btn:hover {
+  transform: scale(1.06);
+  opacity: .95;
+}
+
+.float-wa{ background: #25D366 !important; }
+.float-ms{ background: #0084FF !important; }
+
 </style>
 </head>
 <body>
@@ -152,8 +206,12 @@ footer {
     </form>
   </div>
   <div class="social-buttons">
-    <a class="btn-whatsapp" href="https://wa.me/+8801312346017" target="_blank">WhatsApp</a>
-    <a class="btn-messanger" href="https://m.me/share/1CFeMEhnr3/?mibextid=wwXIfr" target="_blank">Messanger</a>
+    <a class="btn-social btn-whatsapp" href="https://wa.me/+8801312346017" target="_blank">
+      <span class="icon">💬</span> WhatsApp
+    </a>
+    <a class="btn-social btn-messanger" href="https://m.me/share/1CFeMEhnr3/?mibextid=wwXIfr" target="_blank">
+      <span class="icon">📩</span> Messanger
+    </a>
   </div>
     <div class="About">
     <h2>About Me</h2>
@@ -188,9 +246,14 @@ footer {
 </script>
     
 <script src="script.js"></script>
+<div class="floating-chat">
+  <a class="float-btn float-wa" href="https://wa.me/+8801312346017" target="_blank" title="WhatsApp">WA</a>
+  <a class="float-btn float-ms" href="https://m.me/share/1CFeMEhnr3/?mibextid=wwXIfr" target="_blank" title="Messanger">MS</a>
+</div>
 
 </body>
 </html>
+
 
 
 

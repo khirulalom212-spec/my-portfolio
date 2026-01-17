@@ -17,7 +17,9 @@ document.addEventListener("DOMContentLoaded", function () {
     const message = document.getElementById("message")?.value || "";
 
     emailjs
-      .send("service_u6hqtnj", "template_aszlqeq", { name, message })
+      .send("service_u6hqtnj", "template_aszlqeq", {
+        name: name,
+        message: message, })
       .then(() => alert("SUCCESS ✅"))
       .catch((err) => alert("FAILED ❌ " + (err.text || JSON.stringify(err))));
   });

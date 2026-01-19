@@ -24,7 +24,9 @@ document.addEventListener("DOMContentLoaded", function () {
       .catch((err) => alert("FAILED ❌ " + (err.text || JSON.stringify(err))));
   });
 
-  function appendValue(value){
+});
+
+function appendValue(value){
   document.getElementById("display").value += value;
 }
 
@@ -40,5 +42,3 @@ function calculate(){
     display.value = "Error";
   }
 }
-
-});

@@ -42,3 +42,16 @@ function calculate(){
     display.value = "Error";
   }
 }
+
+function appendDecimal(){
+  const display = document.getElementById("display");
+  const value = display.value;
+
+  const parts = value.split(/[\+\-\*\/]/);
+  const lastNumber = parts[parts.length - 1];
+
+  if (lastNumber.includes(".")) return;
+
+  display.value += ".";
+}
+

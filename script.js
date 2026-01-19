@@ -58,5 +58,15 @@ function backspace(){
   const display = document.getElementById("display");
   display.value = display.value.slice(0, -1);
 }
+function percent(){
+  const display = document.getElementById("display");
+  const value = display.value;
+
+  const parts = value.split(/[\+\-\*\/]/);
+  const lastNumber = parts[parts.length - 1];
+  if (lastNumber === "") return;
+  const percentValue = parseFloat(lastNumber) / 100;
+  display.value = value.slice(0, value.length - lastNumber.length) + percentValue;
+}
 
 

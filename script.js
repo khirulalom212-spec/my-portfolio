@@ -62,11 +62,29 @@ function percent(){
   const display = document.getElementById("display");
   const value = display.value;
 
-  const parts = value.split(/[\+\-\*\/]/);
-  const lastNumber = parts[parts.length - 1];
-  if (lastNumber === "") return;
-  const percentValue = parseFloat(lastNumber) / 100;
-  display.value = value.slice(0, value.length - lastNumber.length) + percentValue;
+  const match = value.match(/(\d+(\.\d+)?)([\+\-\*\/])(\d+(\.\d+)?)$/);
+
+  if (!match) return;
+
+  const firstNumber = parseFloat(match[1]);
+  const operator = match[3];
+  const secondNumber = parseFloat(match[4]);
+
+  let result;
+
+  if (operator === "+" || operator === "-") {
+    const percentValue = (firstNumber * secondNumber) / 100;
+    result = operator === "+"
+      ? firstNumber + percentValue
+      : firstNumber - percentValue;
+  } else if (operator === "*") {
+    result = firstNumber * (secondNumber / 100);
+  } else if (operator === "/") {
+    result = firstNumber / (secondNumber / 100);
+  }
+
+  display.value = result;
 }
+
 
 

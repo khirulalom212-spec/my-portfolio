@@ -184,10 +184,57 @@ footer {
 .float-wa{ background: #25D366 !important; }
 .float-ms{ background: #0084FF !important; }
 
+.projects{
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.project-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.project-card{
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform .25s ease, box-shadow .25s ease;
+}
+
+.project-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 16px 35px rgba(0,0,0,0.12);
+}
+
+.project-links{
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.project-links a{
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 600;
+  background: #0d6efd;
+  color: white;
+}
+
+.project-links a:last-child{
+  background: #24292e;
+}
+
 </style>
 </head>
 <body>
   <div class="navbar">
+    <a href="#projects">Projects</a>
     <a href="#">Home</a>
     <a href="#">About</a>
     <a href="#">Skills</a>
@@ -229,6 +276,40 @@ footer {
       <li>Github</li>
     </ul>
   </div>
+
+  <section class="projects" id="projects">
+  <h2>My Projects</h2>
+
+  <div class="project-grid">
+
+    <div class="project-card">
+      <h3>Portfolio Website</h3>
+      <p>Personal portfolio website built with HTML, CSS and JavaScript.</p>
+      <div class="project-links">
+        <a href="https://khirulalom212-spec.github.io/my-portfolio/" target="_blank">Live</a>
+        <a href="https://khirulalom212-spec.github.io/my-portfolio/" target="_blank">GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Upcoming Project</h3>
+      <p>JavaScript calculator project (coming soon).</p>
+      <div class="project-links">
+        <a href="https://khirulalom212-spec.github.io/my-portfolio/">Coming Soon</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Upcoming Project</h3>
+      <p>Todo list application using JavaScript (coming soon).</p>
+      <div class="project-links">
+        <a href="https://khirulalom212-spec.github.io/my-portfolio/">Coming Soon</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
   <div class="Contact">
     <h2>Contact Me</h2>
     <p>Email: khirulalom212@gmail.com</p>
@@ -253,6 +334,7 @@ footer {
 
 </body>
 </html>
+
 
 
 

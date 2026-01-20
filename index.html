@@ -236,12 +236,24 @@ footer {
 }
 
 .calc-box{
-  width: 260px;
-  margin: auto;
-  padding: 20px;
-  background: #fff;
+  width: 320px;
+  margin: 18px auto 0;
+  padding: 18px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
+}
+#display{
+  width: 100%;
+  height: 60px;
+  font-size: 26px;
+  border: 1px solid #e6e6e6;
   border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  padding: 10px 14px;
+  text-align: right;
+  outline: none;
+  background: #f8f9fb;
+  margin-bottom: 14px;
 }
 
 .calc-box input{
@@ -260,18 +272,22 @@ footer {
 }
 
 .buttons button{
-  padding: 15px;
+  padding: 16px 0;
   font-size: 18px;
   cursor: pointer;
   border: none;
-  border-radius: 6px;
+  border-radius: 12px;
   background: #0d6efd;
-  color: white;
+  color: #fff;
+  transition: transform .15s ease, opacity .15s ease;
 }
 
 .buttons button:hover{
-  background: #0b5ed7;
+  transform: translateY(-2px);
+  opacity: .92;
 }
+.buttons button:nth-child(1){ background: #dc3545; }
+.buttons button:nth-child(2){ background: #6c757d; }
 
 </style>
 </head>
@@ -412,6 +428,7 @@ footer {
 
 </body>
 </html>
+
 
 
 

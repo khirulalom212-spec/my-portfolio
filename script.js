@@ -85,6 +85,45 @@ function percent(){
 
   display.value = result;
 }
+document.addEventListener("keydown", function (e) {
+  const key = e.key;
+
+  if (key >= "0" && key <= "9") {
+    appendValue(key);
+    return;
+  }
+
+  if (key === "+" || key === "-" || key === "*" || key === "/") {
+    appendValue(key);
+    return;
+  }
+
+  if (key === ".") {
+    appendDecimal();
+    return;
+  }
+
+  if (key === "Enter") {
+    e.preventDefault();
+    calculate();
+    return;
+  }
+
+  if (key === "Backspace") {
+    backspace();
+    return;
+  }
+
+  if (key === "Escape") {
+    clearDisplay();
+    return;
+  }
+  
+  if (key === "%") {
+    percent();
+    return;
+  }
+});
 
 
 

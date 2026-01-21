@@ -22,6 +22,12 @@
 
     <button id="clearAll" class="clear">Clear All</button>
   </div>
+  <script>
+  const savedTheme = localStorage.getItem("site_theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+  }
+</script>
 
   <script src="todo.js"></script>
 </body>

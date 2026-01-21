@@ -69,6 +69,26 @@
 
     .ac{ background:#dc3545 !important; }
     .bs{ background:#6c757d !important; }
+    /* DARK MODE */
+body.dark{
+  background:#0f172a;
+  color:#e5e7eb;
+}
+
+body.dark .calc-box{
+  background:#0b1220;
+}
+
+body.dark #display{
+  background:#020617;
+  color:#e5e7eb;
+  border:1px solid #1e293b;
+}
+
+body.dark button{
+  opacity:.95;
+}
+
   </style>
 </head>
 
@@ -108,6 +128,12 @@
       <button onclick="clearDisplay()">C</button>
     </div>
   </div>
+  <script>
+  const savedTheme = localStorage.getItem("site_theme");
+  if (savedTheme === "dark") {
+    document.body.classList.add("dark");
+  }
+</script>
 
   <script src="./script.js"></script>
 </body>

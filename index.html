@@ -334,6 +334,30 @@ body.dark button{
   opacity: .98;
 }
 
+html{
+  scroll-behavior: smooth;
+}
+
+a, button{
+  transition: transform .2s ease, opacity .2s ease;
+}
+
+a:hover, button:hover{
+  transform: translateY(-2px);
+  opacity: .95;
+}
+
+.reveal{
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+
 </style>
 </head>
 <body>
@@ -357,7 +381,7 @@ body.dark button{
       <button type="submit">Send</button>
     </form>
   </div>
-  <div class="social-buttons reveal">
+  <div class="social-buttons">
     <a class="btn-social btn-whatsapp" href="https://wa.me/+8801312346017" target="_blank">
       <span class="icon">💬</span> WhatsApp
     </a>
@@ -365,7 +389,7 @@ body.dark button{
       <span class="icon">📩</span> Messanger
     </a>
   </div>
-    <div class="About">
+    <div class="About reveal">
     <h2>About Me</h2>
     <p>I am khirul Alom, I passionate web debelopement learner.
       I enjoy creating websites and improving my skills every day.
@@ -382,7 +406,7 @@ body.dark button{
     </ul>
   </div>
 
-  <section class="projects" id="projects">
+  <section class="projects reveal" id="projects">
   <h2>My Projects</h2>
 
   <div class="project-grid">
@@ -484,6 +508,7 @@ body.dark button{
 
 </body>
 </html>
+
 
 
 

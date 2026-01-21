@@ -160,5 +160,21 @@ function revealOnScroll(){
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
 
+const typeEl = document.getElementById("typewriter");
+
+if (typeEl) {
+  const text = "Khairul";
+  let i = 0;
+
+  function type() {
+    if (i <= text.length) {
+      typeEl.textContent = text.slice(0, i);
+      i++;
+      setTimeout(type, 120);
+    }
+  }
+
+  type();
+}
 
 

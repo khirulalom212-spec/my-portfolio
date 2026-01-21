@@ -112,3 +112,28 @@ body{
 }
 
 .clear:hover{ opacity:.92; }
+
+/* DARK MODE */
+body.dark{
+  background:#0f172a;
+  color:#e5e7eb;
+}
+
+body.dark .todo-app{
+  background:#0b1220;
+}
+
+body.dark input{
+  background:#020617;
+  color:#e5e7eb;
+  border:1px solid #1e293b;
+}
+
+body.dark .todo-item{
+  border-color:#1e293b;
+}
+
+body.dark button{
+  opacity:.95;
+}
+

@@ -1,28 +1,46 @@
 document.addEventListener("DOMContentLoaded", function () {
   console.log("DOM loaded");
 
-  const form = document.getElementById("contactForm");
-  console.log("form:", form);
+const form = document.getElementById("contactForm");
+const msgBox = document.getElementById("formMessage");
 
-  if (!form) {
-    alert("Form not found! Check id='contactForm'");
-    return;
-  }
-
+if (form) {
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    alert("Submit event fired ✅");
 
-    const name = document.getElementById("name")?.value || "";
-    const message = document.getElementById("message")?.value || "";
+    const name = document.getElementById("name").value.trim();
+    const message = document.getElementById("message").value.trim();
 
+    msgBox.className = "form-msg";
+
+    if (name.length < 3) {
+      msgBox.textContent = "❌ Name must be at least 3 characters.";
+      msgBox.classList.add("error");
+      return;
+    }
+
+    if (message.length < 10) {
+      msgBox.textContent = "❌ Message must be at least 10 characters.";
+      msgBox.classList.add("error");
+      return;
+    }
+
+    msgBox.textContent = "⏳ Sending...";
+    
     emailjs
-      .send("service_u6hqtnj", "template_aszlqeq", {
-        name: name,
-        message: message, })
-      .then(() => alert("SUCCESS ✅"))
-      .catch((err) => alert("FAILED ❌ " + (err.text || JSON.stringify(err))));
+      .send("service_u6hqtnj", "template_aszlqeq", { name, message })
+      .then(() => {
+        msgBox.textContent = "✅ Message sent successfully!";
+        msgBox.classList.add("success");
+        form.reset();
+      })
+      .catch(() => {
+        msgBox.textContent = "❌ Failed to send message.";
+        msgBox.classList.add("error");
+      });
   });
+}
+
 
 });
 

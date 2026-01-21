@@ -362,7 +362,18 @@ a:hover, button:hover{
   padding-right: 4px;
   white-space: nowrap;
 }
+.form-msg{
+  margin-top: 12px;
+  font-weight: 700;
+}
 
+.form-msg.success{
+  color: #16a34a;
+}
+
+.form-msg.error{
+  color: #dc2626;
+}
 
 </style>
 </head>
@@ -385,6 +396,7 @@ a:hover, button:hover{
       <input id="name" type="text" placeholder="Your Name" required>
       <textarea id="message" name="message" placeholder="Your Message" required></textarea>
       <button type="submit">Send</button>
+      <p id="formMessage" class="form-msg"></p>
     </form>
   </div>
   <div class="social-buttons">
@@ -514,6 +526,7 @@ a:hover, button:hover{
 
 </body>
 </html>
+
 
 
 

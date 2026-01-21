@@ -124,6 +124,26 @@ document.addEventListener("keydown", function (e) {
     return;
   }
 });
+const toggleBtn = document.getElementById("themeToggle");
+const THEME_KEY = "site_theme";
+
+// Load saved theme
+const savedTheme = localStorage.getItem(THEME_KEY);
+if (savedTheme === "dark") {
+  document.body.classList.add("dark");
+  if (toggleBtn) toggleBtn.textContent = "☀️ Light";
+}
+
+if (toggleBtn) {
+  toggleBtn.addEventListener("click", () => {
+    document.body.classList.toggle("dark");
+
+    const isDark = document.body.classList.contains("dark");
+    localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
+
+    toggleBtn.textContent = isDark ? "☀️ Light" : "🌙 Dark";
+  });
+}
 
 
 

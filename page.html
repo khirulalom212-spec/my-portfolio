@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Khirul Shop | Mini E-commerce</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <p class="eyebrow">সাশ্রয়ী দামে ট্রেন্ডিং গ্যাজেট</p>
+      <h1>Khirul Mini E-commerce</h1>
+      <p class="hero-copy">ভালো মানের গ্যাজেটস, পাওয়ার অ্যাকসেসরিজ আর মোবাইল এসেনশিয়ালস এখন এক জায়গায়। পছন্দের প্রোডাক্ট সিলেক্ট করুন, bKash-এ পেমেন্ট করুন, তারপর অর্ডার কনফার্ম করুন।</p>
+      <a class="btn" href="#products">পণ্য দেখুন</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="products" class="section container">
+      <div class="section-heading">
+        <h2>আমাদের পণ্য</h2>
+        <p>যেকোনো একটি প্রোডাক্ট বেছে নিলেই নিচের পেমেন্ট সেকশনে তার দাম অটো দেখাবে।</p>
+      </div>
+
+      <div class="products">
+        <article class="card">
+          <img
+            class="product-image"
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 420'><rect width='640' height='420' rx='36' fill='%23eaf4ff'/><circle cx='214' cy='226' r='102' fill='%23151d31'/><circle cx='426' cy='226' r='102' fill='%23151d31'/><circle cx='214' cy='226' r='54' fill='%232c395c'/><circle cx='426' cy='226' r='54' fill='%232c395c'/><rect x='196' y='84' width='248' height='46' rx='23' fill='%23ff6b6b'/><text x='320' y='113' font-size='28' text-anchor='middle' font-family='Arial' fill='white'>AIRPODS</text></svg>"
+            alt="Bluetooth Airphone"
+          />
+          <div class="card-body">
+            <span class="tag">Wireless</span>
+            <h3>Bluetooth Airphone</h3>
+            <p>ওয়্যারলেস, ক্লিয়ার সাউন্ড, লং ব্যাটারি ব্যাকআপ এবং কমফোর্টেবল ফিটিং।</p>
+            <p class="price">৳1,200</p>
+            <button class="order-btn" data-product="Bluetooth Airphone" data-price="1200">অর্ডার করুন</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            class="product-image"
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 420'><rect width='640' height='420' rx='36' fill='%23fff3df'/><rect x='236' y='58' width='168' height='304' rx='34' fill='%231b2337'/><rect x='258' y='88' width='124' height='244' rx='20' fill='%2336c2a1'/><rect x='286' y='22' width='68' height='56' rx='18' fill='%23ff8c42'/><text x='320' y='278' font-size='34' text-anchor='middle' font-family='Arial' fill='white'>10000</text><text x='320' y='314' font-size='24' text-anchor='middle' font-family='Arial' fill='white'>mAh</text></svg>"
+            alt="Power Bank"
+          />
+          <div class="card-body">
+            <span class="tag">Fast Charge</span>
+            <h3>Power Bank</h3>
+            <p>১০,০০০ mAh ক্যাপাসিটি, ফাস্ট চার্জ সাপোর্ট এবং ট্রাভেল-ফ্রেন্ডলি ডিজাইন।</p>
+            <p class="price">৳1,500</p>
+            <button class="order-btn" data-product="Power Bank" data-price="1500">অর্ডার করুন</button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img
+            class="product-image"
+            src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 420'><rect width='640' height='420' rx='36' fill='%23eef8f0'/><rect x='224' y='56' width='192' height='308' rx='34' fill='%23141f2b'/><rect x='242' y='78' width='156' height='268' rx='24' fill='%23b9e4ff'/><path d='M260 118c58-48 136-48 194 0v182c-58 48-136 48-194 0z' fill='%23ff7b54'/><circle cx='320' cy='216' r='46' fill='%23ffd166'/><text x='320' y='224' font-size='22' text-anchor='middle' font-family='Arial' fill='%23242d3c'>CASE</text></svg>"
+            alt="Mobile Case"
+          />
+          <div class="card-body">
+            <span class="tag">Protective</span>
+            <h3>Mobile Case</h3>
+            <p>টেকসই, স্টাইলিশ এবং ফোনকে স্ক্র্যাচ ও হালকা শক থেকে সুরক্ষিত রাখে।</p>
+            <p class="price">৳350</p>
+            <button class="order-btn" data-product="Mobile Case" data-price="350">অর্ডার করুন</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="payment" class="section payment-section">
+      <div class="container payment-grid">
+        <div class="payment-card">
+          <p class="payment-label">bKash Manual Checkout</p>
+          <h2>পেমেন্ট করুন bKash-এ</h2>
+          <p class="payment-copy">প্রোডাক্ট সিলেক্ট করার পর নিচের নম্বরে সঠিক এমাউন্ট Send Money করুন। পেমেন্টের পরে Transaction ID দিয়ে যোগাযোগ করে অর্ডার কনফার্ম করুন।</p>
+
+          <div class="payment-box">
+            <div>
+              <span class="small-label">bKash Number</span>
+              <strong id="bkash-number">+8801312346017</strong>
+            </div>
+            <button class="copy-btn" id="copy-number-btn" type="button">নম্বর কপি</button>
+          </div>
+
+          <div class="summary">
+            <div class="summary-row">
+              <span>নির্বাচিত পণ্য</span>
+              <strong id="summary-product">এখনও কিছু নির্বাচন করা হয়নি</strong>
+            </div>
+            <div class="summary-row">
+              <span>পেমেন্ট এমাউন্ট</span>
+              <strong id="summary-amount">৳0</strong>
+            </div>
+          </div>
+
+          <ol class="payment-steps">
+            <li>উপরে গিয়ে একটি প্রোডাক্ট সিলেক্ট করুন।</li>
+            <li>bKash অ্যাপ থেকে <strong>Send Money</strong> করুন <strong>+8801312346017</strong> নম্বরে।</li>
+            <li>সঠিক amount পাঠিয়ে Transaction ID সংরক্ষণ করুন।</li>
+            <li>Transaction ID এবং প্রোডাক্টের নাম দিয়ে WhatsApp, Call বা Email এ যোগাযোগ করুন।</li>
+          </ol>
+
+          <p id="selected-product" class="selected-product">প্রথমে উপরের যেকোনো একটি পণ্য বেছে নিন।</p>
+        </div>
+
+        <div class="contact-card">
+          <h2>অর্ডার কনফার্ম করুন</h2>
+          <p>পেমেন্ট সম্পন্ন হলে নিচের যেকোনো মাধ্যমে যোগাযোগ করলে আমরা দ্রুত অর্ডার প্রসেস করতে পারব।</p>
+
+          <div class="contact-links">
+            <a href="mailto:khirulalom212@gmail.com">Email করুন</a>
+            <a href="tel:+8801312346017">Call করুন</a>
+            <a href="https://wa.me/8801312346017?text=%E0%A6%86%E0%A6%AE%E0%A6%BF%20%E0%A6%85%E0%A6%B0%E0%A7%8D%E0%A6%A1%E0%A6%BE%E0%A6%B0%20%E0%A6%95%E0%A6%A8%E0%A6%AB%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%AE%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" rel="noopener noreferrer">WhatsApp করুন</a>
+          </div>
+
+          <div class="notice">
+            <h3>নোট</h3>
+            <p>এখানে official merchant API gateway ব্যবহার করা হয়নি। এটি আপনার ব্যক্তিগত bKash নম্বরে manual payment নেওয়ার জন্য তৈরি checkout section.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="order-form-section" class="section container">
+      <div class="section-heading">
+        <h2>অর্ডার তথ্য জমা দিন</h2>
+        <p>কাস্টমারের তথ্য ও bKash payment details একসাথে নিলে পুরো flow আরও professional দেখায়।</p>
+      </div>
+
+      <div class="forms-grid">
+        <form class="info-card form-card" id="customer-form">
+          <p class="payment-label">Customer Details</p>
+          <h3>ডেলিভারি তথ্য</h3>
+
+          <label class="field">
+            <span>আপনার নাম</span>
+            <input type="text" id="customer-name" name="customer_name" placeholder="যেমন: Khirul Islam" required />
+          </label>
+
+          <label class="field">
+            <span>মোবাইল নম্বর</span>
+            <input type="tel" id="customer-phone" name="customer_phone" placeholder="01XXXXXXXXX" required />
+          </label>
+
+          <label class="field">
+            <span>সম্পূর্ণ ঠিকানা</span>
+            <textarea id="customer-address" name="customer_address" rows="4" placeholder="গ্রাম/এলাকা, থানা, জেলা" required></textarea>
+          </label>
+
+          <label class="field">
+            <span>অতিরিক্ত নোট</span>
+            <textarea id="customer-note" name="customer_note" rows="3" placeholder="রঙ, মডেল বা ডেলিভারি সংক্রান্ত নোট"></textarea>
+          </label>
+        </form>
+
+        <form class="info-card form-card" id="payment-proof-form">
+          <p class="payment-label">Payment Proof</p>
+          <h3>Transaction তথ্য</h3>
+
+          <label class="field">
+            <span>নির্বাচিত পণ্য</span>
+            <input type="text" id="order-product-input" name="order_product" placeholder="প্রোডাক্ট সিলেক্ট করুন" readonly />
+          </label>
+
+          <label class="field">
+            <span>পেমেন্ট amount</span>
+            <input type="text" id="order-amount-input" name="order_amount" placeholder="৳0" readonly />
+          </label>
+
+          <label class="field">
+            <span>যে নম্বর থেকে পেমেন্ট করেছেন</span>
+            <input type="tel" id="payer-number" name="payer_number" placeholder="01XXXXXXXXX" required />
+          </label>
+
+          <label class="field">
+            <span>bKash Transaction ID</span>
+            <input type="text" id="transaction-id" name="transaction_id" placeholder="যেমন: 9ABCD12345" required />
+          </label>
+
+          <button type="submit" class="submit-btn">WhatsApp এ পাঠান</button>
+          <p id="form-status" class="form-status">প্রোডাক্ট সিলেক্ট করে আপনার তথ্য পূরণ করুন।</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© <span id="year"></span> Khirul Mini E-commerce</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

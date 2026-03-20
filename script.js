@@ -1,198 +1,89 @@
-document.addEventListener("DOMContentLoaded", function () {
-  console.log("DOM loaded");
+const yearEl = document.getElementById("year");
+const selectedProductEl = document.getElementById("selected-product");
+const summaryProductEl = document.getElementById("summary-product");
+const summaryAmountEl = document.getElementById("summary-amount");
+const orderProductInput = document.getElementById("order-product-input");
+const orderAmountInput = document.getElementById("order-amount-input");
+const orderButtons = document.querySelectorAll(".order-btn");
+const copyNumberBtn = document.getElementById("copy-number-btn");
+const bkashNumberEl = document.getElementById("bkash-number");
+const paymentProofForm = document.getElementById("payment-proof-form");
+const formStatusEl = document.getElementById("form-status");
+const customerNameEl = document.getElementById("customer-name");
+const customerPhoneEl = document.getElementById("customer-phone");
+const customerAddressEl = document.getElementById("customer-address");
+const customerNoteEl = document.getElementById("customer-note");
+const payerNumberEl = document.getElementById("payer-number");
+const transactionIdEl = document.getElementById("transaction-id");
 
-const form = document.getElementById("contactForm");
-const msgBox = document.getElementById("formMessage");
+yearEl.textContent = new Date().getFullYear();
 
-if (form) {
-  form.addEventListener("submit", function (e) {
-    e.preventDefault();
+const bkashNumber = bkashNumberEl.textContent.trim();
 
-    const name = document.getElementById("name").value.trim();
-    const message = document.getElementById("message").value.trim();
+const setSelectedProduct = (product, price) => {
+  const formattedPrice = Number(price).toLocaleString("en-US");
 
-    msgBox.className = "form-msg";
+  summaryProductEl.textContent = product;
+  summaryAmountEl.textContent = `৳${formattedPrice}`;
+  orderProductInput.value = product;
+  orderAmountInput.value = `৳${formattedPrice}`;
+  selectedProductEl.textContent = `${product} নির্বাচন করা হয়েছে। এখন bKash নম্বর ${bkashNumber}-এ ৳${formattedPrice} Send Money করে Transaction ID সহ WhatsApp, Call অথবা Email এ যোগাযোগ করুন।`;
+  window.location.hash = "payment";
+};
 
-    if (name.length < 3) {
-      msgBox.textContent = "❌ Name must be at least 3 characters.";
-      msgBox.classList.add("error");
-      return;
-    }
-
-    if (message.length < 10) {
-      msgBox.textContent = "❌ Message must be at least 10 characters.";
-      msgBox.classList.add("error");
-      return;
-    }
-
-    msgBox.textContent = "⏳ Sending...";
-    
-    emailjs
-      .send("service_u6hqtnj", "template_aszlqeq", { name, message })
-      .then(() => {
-        msgBox.textContent = "✅ Message sent successfully!";
-        msgBox.classList.add("success");
-        form.reset();
-      })
-      .catch(() => {
-        msgBox.textContent = "❌ Failed to send message.";
-        msgBox.classList.add("error");
-      });
+orderButtons.forEach((button) => {
+  button.addEventListener("click", () => {
+    setSelectedProduct(button.dataset.product, button.dataset.price);
   });
-}
-
-
 });
 
-function appendValue(value){
-  document.getElementById("display").value += value;
-}
+copyNumberBtn.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(bkashNumber);
+    copyNumberBtn.textContent = "কপি হয়েছে";
 
-function clearDisplay(){
-  document.getElementById("display").value = "";
-}
-
-function calculate(){
-  const display = document.getElementById("display");
-  try{
-    display.value = eval(display.value);
-  }catch{
-    display.value = "Error";
-  }
-}
-
-function appendDecimal(){
-  const display = document.getElementById("display");
-  const value = display.value;
-
-  const parts = value.split(/[\+\-\*\/]/);
-  const lastNumber = parts[parts.length - 1];
-
-  if (lastNumber.includes(".")) return;
-
-  display.value += ".";
-}
-function backspace(){
-  const display = document.getElementById("display");
-  display.value = display.value.slice(0, -1);
-}
-function percent(){
-  const display = document.getElementById("display");
-  const value = display.value;
-
-  const match = value.match(/(\d+(\.\d+)?)([\+\-\*\/])(\d+(\.\d+)?)$/);
-
-  if (!match) return;
-
-  const firstNumber = parseFloat(match[1]);
-  const operator = match[3];
-  const secondNumber = parseFloat(match[4]);
-
-  let result;
-
-  if (operator === "+" || operator === "-") {
-    const percentValue = (firstNumber * secondNumber) / 100;
-    result = operator === "+"
-      ? firstNumber + percentValue
-      : firstNumber - percentValue;
-  } else if (operator === "*") {
-    result = firstNumber * (secondNumber / 100);
-  } else if (operator === "/") {
-    result = firstNumber / (secondNumber / 100);
-  }
-
-  display.value = result;
-}
-document.addEventListener("keydown", function (e) {
-  const key = e.key;
-
-  if (key >= "0" && key <= "9") {
-    appendValue(key);
-    return;
-  }
-
-  if (key === "+" || key === "-" || key === "*" || key === "/") {
-    appendValue(key);
-    return;
-  }
-
-  if (key === ".") {
-    appendDecimal();
-    return;
-  }
-
-  if (key === "Enter") {
-    e.preventDefault();
-    calculate();
-    return;
-  }
-
-  if (key === "Backspace") {
-    backspace();
-    return;
-  }
-
-  if (key === "Escape") {
-    clearDisplay();
-    return;
-  }
-  
-  if (key === "%") {
-    percent();
-    return;
+    setTimeout(() => {
+      copyNumberBtn.textContent = "নম্বর কপি";
+    }, 1800);
+  } catch (error) {
+    selectedProductEl.textContent = `নম্বর কপি করা যায়নি। অনুগ্রহ করে ম্যানুয়ালি কপি করুন: ${bkashNumber}`;
   }
 });
-const toggleBtn = document.getElementById("themeToggle");
-const THEME_KEY = "site_theme";
 
-// Load saved theme
-const savedTheme = localStorage.getItem(THEME_KEY);
-if (savedTheme === "dark") {
-  document.body.classList.add("dark");
-  if (toggleBtn) toggleBtn.textContent = "☀️ Light";
-}
+paymentProofForm.addEventListener("submit", (event) => {
+  event.preventDefault();
 
-if (toggleBtn) {
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
+  const selectedProduct = orderProductInput.value.trim();
+  const selectedAmount = orderAmountInput.value.trim();
+  const customerName = customerNameEl.value.trim();
+  const customerPhone = customerPhoneEl.value.trim();
+  const customerAddress = customerAddressEl.value.trim();
+  const customerNote = customerNoteEl.value.trim();
+  const payerNumber = payerNumberEl.value.trim();
+  const transactionId = transactionIdEl.value.trim();
 
-    const isDark = document.body.classList.contains("dark");
-    localStorage.setItem(THEME_KEY, isDark ? "dark" : "light");
-
-    toggleBtn.textContent = isDark ? "☀️ Light" : "🌙 Dark";
-  });
-}
-const reveals = document.querySelectorAll(".reveal");
-
-function revealOnScroll(){
-  const windowHeight = window.innerHeight;
-
-  reveals.forEach(el => {
-    const top = el.getBoundingClientRect().top;
-    if(top < windowHeight - 80){
-      el.classList.add("show");
-    }
-  });
-}
-
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-
-const typeEl = document.getElementById("typewriter");
-
-if (typeEl) {
-  const text = "Khairul";
-  let i = 0;
-
-  function type() {
-    if (i <= text.length) {
-      typeEl.textContent = text.slice(0, i);
-      i++;
-      setTimeout(type, 120);
-    }
+  if (!selectedProduct || !selectedAmount || selectedAmount === "৳0") {
+    formStatusEl.textContent = "সবার আগে একটি প্রোডাক্ট সিলেক্ট করুন, তারপর payment details জমা দিন।";
+    window.location.hash = "products";
+    return;
   }
 
-  type();
-}
+  const noteLine = customerNote ? `নোট: ${customerNote}` : "নোট: নেই";
+  const message = [
+    "নতুন অর্ডার",
+    `কাস্টমারের নাম: ${customerName}`,
+    `মোবাইল নম্বর: ${customerPhone}`,
+    `ঠিকানা: ${customerAddress}`,
+    `পণ্য: ${selectedProduct}`,
+    `এমাউন্ট: ${selectedAmount}`,
+    `যে নম্বর থেকে পেমেন্ট: ${payerNumber}`,
+    `Transaction ID: ${transactionId}`,
+    noteLine
+  ].join("\n");
 
+  const whatsappUrl = `https://wa.me/8801312346017?text=${encodeURIComponent(message)}`;
 
+  formStatusEl.textContent = `${customerName} এর অর্ডার মেসেজ তৈরি হয়েছে। এখন WhatsApp খুলে আপনার নম্বরে পুরো order details পাঠানো হবে।`;
+  selectedProductEl.textContent = `অর্ডার প্রস্তুত। ${customerPhone} নম্বরের customer-এর তথ্য WhatsApp message-এ পাঠানো হচ্ছে।`;
+  window.open(whatsappUrl, "_blank", "noopener");
+});

@@ -7,4 +7,4 @@ Live: https://khirulalom212-spec.github.io/my-portfolio/
 - Todo App: https://khirulalom212-spec.github.io/my-portfolio/todo.html
 
 ## Tech
-HTML, CSS, JavaScript, EmailJS
+HTML, CSS, JavaScript
